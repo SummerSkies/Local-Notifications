@@ -99,10 +99,20 @@ class BillDetailTableViewController: UITableViewController, UITextFieldDelegate 
     }
     
     @IBAction func remindSwitchChanged(_ sender: UISwitch) {
-
+        var bill = self.bill ?? Database.shared.addBill()
+        
         if sender.isOn {
             isDueDatePickerShown = false
             isRemindDatePickerShown = true
+            
+            bill.remindDate = remindDatePicker.date
+            bill.checkNotificationPermissions { granted in
+                if granted == false {
+                    DispatchQueue.main.async {
+                        self.presentNeedAuthorizationAlert()
+                    }
+                }
+            }
         } else {
             isRemindDatePickerShown = false
         }
@@ -210,11 +220,34 @@ class BillDetailTableViewController: UITableViewController, UITextFieldDelegate 
         
         if remindSwitch.isOn {
             bill.remindDate = remindDatePicker.date
+            bill.scheduleReminder(remindDate: bill.remindDate, completion: { _ in
+                DispatchQueue.main.async {
+                    if bill.notificationID == nil {
+                        self.bill = bill
+                    }
+                }
+            })
         } else {
             bill.remindDate = nil
+            bill.removeReminders()
+            self.bill = nil
         }
         
         Database.shared.updateAndSave(bill)
+    }
+    
+    func presentNeedAuthorizationAlert() {
+        let title = "Authorization Needed"
+        let message = "Alarms don't work without notifications, and it looks like you haven't granted us permission to send you those. Please go to the iOS Settings app and grant us notification permissions."
+        let alert = UIAlertController(title: title, message: message,
+           preferredStyle: .alert)
+    
+        let okAction = UIAlertAction(title: "Okay", style: .default,
+           handler: nil)
+    
+        alert.addAction(okAction)
+    
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func cancelButtonTapped() {

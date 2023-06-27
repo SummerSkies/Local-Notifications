@@ -3,6 +3,9 @@
 import Foundation
 
 struct Bill: Codable {
+    static let nofiticationCategoryID = "TempIdentifier"
+    var notificationID: String?
+    
     let id: UUID
     var amount: Double?
     var dueDate: Date?
@@ -16,11 +19,11 @@ struct Bill: Codable {
 }
 
 extension Bill: Hashable {
-//    static func ==(_ lhs: Bill, _ rhs: Bill) -> Bool {
-//        return lhs.id == rhs.id
-//    }
-//
-//    func hash(into hasher: inout Hasher) {
-//        hasher.combine(id)
-//    }
+    static func ==(_ lhs: Bill, _ rhs: Bill) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

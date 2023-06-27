@@ -85,6 +85,15 @@ class Database {
         return _billsLookup[id]
     }
     
+    func getBill(for notificationID: String) -> Bill? {
+        for bill in bills {
+            if bill.notificationID == notificationID {
+                return bill
+            }
+        }
+        return nil
+    }
+    
 }
 
 extension Bill: Comparable {

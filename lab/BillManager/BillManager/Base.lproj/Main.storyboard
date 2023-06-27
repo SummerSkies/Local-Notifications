@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zoi-8i-bKT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zoi-8i-bKT">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19129"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,7 +12,7 @@
             <objects>
                 <tableViewController id="GSq-wz-W3P" customClass="BillDetailTableViewController" customModule="BillManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="zAm-p6-roW">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -121,7 +121,7 @@
                             <tableViewSection headerTitle="Remind" id="dN8-Qg-3G4">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rcp-Eh-v8B">
-                                        <rect key="frame" x="0.0" y="458.33333206176758" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="458.33333015441895" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rcp-Eh-v8B" id="WVy-tz-hg3">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
@@ -160,7 +160,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="215" id="mwu-H3-Tbh">
-                                        <rect key="frame" x="0.0" y="502.33333206176758" width="390" height="215"/>
+                                        <rect key="frame" x="0.0" y="502.33333015441895" width="390" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mwu-H3-Tbh" id="Mok-NH-V3f">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="215"/>
@@ -186,7 +186,7 @@
                             <tableViewSection headerTitle="Payment" id="ogC-OU-D0Z" userLabel="Payment">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="WHa-rQ-AHU">
-                                        <rect key="frame" x="0.0" y="773.33333206176758" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="773.33333015441895" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WHa-rQ-AHU" id="yAX-nR-6s3">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
@@ -228,7 +228,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="hlO-ck-OS3">
-                                        <rect key="frame" x="0.0" y="817.33333206176758" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="817.33333015441895" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hlO-ck-OS3" id="9nT-XB-dGQ">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
@@ -267,7 +267,6 @@
                     <navigationItem key="navigationItem" title="Add/Edit Bill" id="HLv-g5-fzd">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Hcc-N7-DrH">
                             <connections>
-                                <action selector="doneButtonTapped" destination="GSq-wz-W3P" id="03X-dn-MBF"/>
                                 <segue destination="d0c-Oj-Ii1" kind="unwind" identifier="saveUnwind" unwindAction="unwindFromBillDetailWithSegue:" id="AEh-Ir-eFc"/>
                             </connections>
                         </barButtonItem>
@@ -296,7 +295,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zoi-8i-bKT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ASD-4r-Jqe">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
